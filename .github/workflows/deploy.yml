@@ -28,3 +28,14 @@ jobs:
           echo "Hello World"
           echo "This is Github Actions" 
 
+      - name: Executing Multiple Commands
+        run: |
+          echo "Hello World"
+          echo "This is Github Actions" 
+
+      - name: Using Github Action internal variables
+        run: |
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_ACTOR
+          echo $GITHUB_SHA
+
