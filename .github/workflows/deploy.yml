@@ -1,15 +1,30 @@
+# Workflow의 이름
 name: Github Actions 실행시켜보기
 
+# Event : 실행되는 시점을 설정
+# main이라는 branch에 push가 되면 실행
 on:
   push:
     branches:
       - main
-  
+
+# Workflow > Job > Step
+
+# Workflow : 하나 이상의 Job을 묶는 그룹. 
+# Job : 실행 단위, 기본적으로 "병렬적으로 수행된다."
 jobs:
+  # Job의 고유 이름
   My-Deploy-Job:
     runs-on: ubuntu-latest
 
+    # Step : 특정 작업을 수행하는 가장 작은 단위
     steps:
       - name: Printing Hello World
+        # 실행하고자 하는 Linux 명령어
         run: echo "Hello World"
-        
+      
+      - name: Executing Multiple Commands
+        run: |
+          echo "Hello World"
+          echo "This is Github Actions" 
+
