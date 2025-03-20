@@ -39,3 +39,9 @@ jobs:
           echo $GITHUB_ACTOR
           echo $GITHUB_SHA
 
+      - name: Using custom variables
+
+        # Repository > Settings > Secrets and variables > Actions > New repository secret에서 등록 가능.
+        run: |
+          echo "This is my custom variable"
+          echo ${{ secrets.MY_SECRET }}
